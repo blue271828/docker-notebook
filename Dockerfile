@@ -1,2 +1,2 @@
-FROM jupyter/scipy-notebook
+FROM jupyter/datascience-notebook
 LABEL maintainer="blue271828"
