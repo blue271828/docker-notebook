@@ -4,13 +4,13 @@ PJTDIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 build:
 	@ docker-compose -f docker-compose.test.yml build
 
-.PHONY: lab
+.PHONY: notebook
 lab:
-	@ docker-compose -f docker-compose.test.yml run -p 8888:8888 -v ${PJTDIR}:/home/jovyan/work lab
+	@ docker-compose -f docker-compose.test.yml run -p 8888:8888 -v ${PJTDIR}:/home/jovyan/work notebook
 
 .PHONY: goss
 goss:
-	@ docker-compose -f docker-compose.test.yml run sut dgoss edit -u root lab
+	@ docker-compose -f docker-compose.test.yml run sut dgoss edit -u root notebook
 
 .PHONY: test
 test:

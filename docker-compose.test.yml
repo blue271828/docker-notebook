@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  lab:
+  notebook:
     build: .
-    image: lab
+    image: notebook
     environment:
       JUPYTER_ENABLE_LAB: "yes"
   sut:
@@ -11,7 +11,7 @@ services:
     environment:
       GOSS_FILES_PATH: goss
       GOSS_FILES_STRATEGY: cp
-    command: dgoss run lab
+    command: dgoss run notebook
     volumes:
       - ./goss:/goss/goss
       - /var/run/docker.sock:/var/run/docker.sock
