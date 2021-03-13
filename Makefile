@@ -5,7 +5,7 @@ build:
 	@ docker-compose -f docker-compose.test.yml build
 
 .PHONY: notebook
-lab:
+notebook:
 	@ docker-compose -f docker-compose.test.yml run -p 8888:8888 -v ${PJTDIR}:/home/jovyan/work notebook
 
 .PHONY: goss
